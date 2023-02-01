@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$("button").click(function() {
+  $.ajax({
+    url: 'http://jsonplaceholder.typicode.com/todos/1?type=main',
+    type: "GET",
+    dataType: 'json',
+    success: function(result) {
+      $("#result").html(Object.values(result).join(','));
+    }
+  });
+});
+});
+
+</script>
+
+
+</head>
+<body>
+
+
+<button id='buttonJSONP'>Restaurant Status</button>
+<div id='result'></div>
+
+</html>
